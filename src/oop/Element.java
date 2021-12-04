@@ -5,7 +5,7 @@ public class Element {
     /**
      * Constructor
      */
-    Element(){
+    public Element(){
         this.elementName = "Element";
     }
     /**
