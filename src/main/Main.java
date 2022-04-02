@@ -8,6 +8,14 @@ public class Main {
     //This main method will help run our code.
     public static void main(String[] args) {
 
+        vibranium();
+
+
+    }
+
+
+    private static void vibranium(){
+
         Element vibranium = new Element();
         vibranium.elementName = "Vibranium";
         vibranium.setAtomicMass(35);
