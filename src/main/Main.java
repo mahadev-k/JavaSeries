@@ -1,5 +1,8 @@
 package main;
 
+import multithreading.BookingService;
+import multithreading.ThreadA;
+import multithreading.ThreadB;
 import oop.Element;
 
 //public access specifier implies this class can be accessed from anywhere.
@@ -8,8 +11,20 @@ public class Main {
     //This main method will help run our code.
     public static void main(String[] args) {
 
-        vibranium();
+        //vibranium();
+        workOnThread();
 
+
+    }
+
+    private static void workOnThread(){
+
+        BookingService bookingService = new BookingService();
+        Thread threadA = new ThreadA(bookingService);
+        Thread threadB = new ThreadB(bookingService);
+
+        threadA.start();
+        threadB.start();
 
     }
 
