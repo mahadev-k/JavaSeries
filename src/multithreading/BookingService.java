@@ -13,7 +13,7 @@ public class BookingService {
 
     public synchronized boolean bookWithSynchronizedKeyword() throws InterruptedException {
        if(totalSeats>0){
-           Thread.sleep(10); // Block of code pushing the change to db or some piece of code that executes some logic before booking
+           Thread.sleep(10); // To simulate some delay
            totalSeats--;
            return true;
        }else{
@@ -24,7 +24,7 @@ public class BookingService {
     public boolean bookWithSyncBlock() throws InterruptedException {
         synchronized (this) {
             if (totalSeats > 0) {
-                Thread.sleep(10); // Block of code pushing the change to db or some piece of code that executes some logic before booking
+                Thread.sleep(10); // To simulate some delay
                 totalSeats--;
                 return true;
             } else {
@@ -39,7 +39,7 @@ public class BookingService {
         lock.lock();
         try{
             if (totalSeats > 0) {
-                Thread.sleep(10); // Block of code pushing the change to db or some piece of code that executes some logic before booking
+                Thread.sleep(10); // To simulate delay.
                 totalSeats--;
                 isBooked =  true;
             } else {
