@@ -11,6 +11,16 @@ public class BookingService {
         return bookWithLock();
     }
 
+    public boolean bookWithoutLock() throws InterruptedException {
+        if(totalSeats>0){
+            Thread.sleep(100); // To simulate delay
+            totalSeats-- ;
+            return true;
+        }else{
+            return false;
+        }
+    }
+
     public synchronized boolean bookWithSynchronizedKeyword() throws InterruptedException {
        if(totalSeats>0){
            Thread.sleep(10); // To simulate some delay
